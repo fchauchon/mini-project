@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,11 +9,4 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('MiniProject');
-  httpClient = inject(HttpClient);
-
-  constructor() {
-    this.httpClient.get('http://localhost:3000/users').subscribe((data) => {
-      console.log(data);
-    });
-  }
 }
